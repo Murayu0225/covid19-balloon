@@ -26,7 +26,7 @@ const config: NuxtConfig = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp',
+        content: 'https://sagamihara-stopcovid19.com',
       },
       {
         hid: 'twitter:card',
@@ -36,12 +36,12 @@ const config: NuxtConfig = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@tokyo_bousai',
+        content: '@sagami_covid19',
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@tokyo_bousai',
+        content: '@sagami_covid19',
       },
       {
         hid: 'fb:app_id',
@@ -203,8 +203,8 @@ const config: NuxtConfig = {
     whitelistPatterns: [/(col|row|v-window)/],
   },
   manifest: {
-    name: '東京都 新型コロナウイルス感染症対策サイト',
-    theme_color: '#00a040',
+    name: '相模原市 新型コロナウイルス感染症対策サイト',
+    theme_color: '#085c6c',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',
@@ -214,31 +214,16 @@ const config: NuxtConfig = {
   generate: {
     fallback: true,
     routes() {
-      const locales = ['en', 'zh-cn', 'zh-tw', 'ko', 'ja-basic']
+      const locales = ['en', 'fr', 'zh-cn', 'zh-tw', 'ko', 'th', 'vi', 'pt-BR']
       const pages = [
         '/cards/details-of-confirmed-cases',
         '/cards/number-of-confirmed-cases',
         '/cards/number-of-confirmed-cases-by-municipalities',
-        '/cards/attributes-of-confirmed-cases',
-        '/cards/number-of-tested',
-        '/cards/number-of-reports-to-covid19-telephone-advisory-center',
-        '/cards/predicted-number-of-toei-subway-passengers',
-        '/cards/agency',
-        '/cards/positive-rate',
         '/cards/positive-number-by-diagnosed-date',
         '/cards/monitoring-number-of-confirmed-cases',
-        '/cards/untracked-rate',
-        '/cards/positive-status-severe-case',
-        '/cards/number-of-hospitalized',
-        '/cards/monitoring-number-of-reports-to-covid19-consultation-desk',
-        '/cards/monitoring-status-overview',
-        '/cards/number-of-reports-to-consultations-about-fever-in-7119',
-        '/cards/number-of-tokyo-rules-applied',
         '/cards/monitoring-items-overview',
         '/cards/positive-number-by-developed-date',
-        '/cards/number-of-reports-to-tokyo-fever-consultation-center',
         '/cards/deaths-by-death-date',
-        '/cards/variant',
       ]
       const localizedPages = locales
         .map((locale) => pages.map((page) => `/${locale}${page}`))
