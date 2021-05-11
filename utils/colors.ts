@@ -6,23 +6,23 @@ export type SurfaceStyle = {
 type Series = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'
 
 const surfaceStyleA: SurfaceStyle = {
-  strokeColor: '#5a8055',
+  strokeColor: '#053c47',
   fillColor: '#1b4d30',
 }
 
 const surfaceStyleB: SurfaceStyle = {
-  strokeColor: '#5a8055',
-  fillColor: '#00a040',
+  strokeColor: '#053c47',
+  fillColor: '#085c6c',
 }
 
 const surfaceStyleC: SurfaceStyle = {
-  strokeColor: '#5a8055',
-  fillColor: '#c5e2c6',
+  strokeColor: '#053c47',
+  fillColor: '#c8dae1',
 }
 
 const surfaceStyleD: SurfaceStyle = {
-  strokeColor: '#1b4d30',
-  fillColor: '#cbe1c8',
+  strokeColor: '#1b454d',
+  fillColor: '#c8dae1',
 }
 
 const surfaceStyleE: SurfaceStyle = {
@@ -31,12 +31,12 @@ const surfaceStyleE: SurfaceStyle = {
 }
 
 const surfaceStyleF: SurfaceStyle = {
-  strokeColor: '#1b4d30',
-  fillColor: '#1b4d30',
+  strokeColor: '#1b454d',
+  fillColor: '#1b454d',
 }
 
 const surfaceStyleG: SurfaceStyle = {
-  strokeColor: '#5a8055',
+  strokeColor: '#053c47',
   fillColor: '#e2eee2',
 }
 
