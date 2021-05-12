@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-o', '--out', action='store_true', help='output screenshots.')
 args = parser.parse_args()
 
-HOST = 'https://stopcovid19.metro.tokyo.lg.jp'
+HOST = 'https://sagamihara-stopcovid19.com'
 OUT_DIR = 'out'
 
 PATHS = (
@@ -29,10 +29,13 @@ PATHS = (
 LANGS = (
     'ja',
     'en',
+    'fr',
     'zh-cn',
     'zh-tw',
     'ko',
-    'ja-basic',
+    'th',
+    'vi',
+    'pt-BR',
 )
 
 options = webdriver.ChromeOptions()
