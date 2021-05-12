@@ -8,8 +8,16 @@
         :chart-data="graphData"
         :date="positiveByDeveloped.date"
         :unit="$t('人')"
-        :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000093'"
       >
+        <template #attentionNote>
+          <p>
+            {{
+              $t(
+                'このグラフに関する相模原市の情報公開終了に伴い、2021年1月19日分の更新を持って運用を終了しました。'
+              )
+            }}
+          </p>
+        </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
@@ -63,9 +71,7 @@ export default {
           if (this.dataKind === 'transition') {
             return {
               lText: lastDayData,
-              sText: `${formattedLastDay} ${this.$t('日別値')}（${this.$t(
-                '現在判明している人数であり、後日修正される場合がある'
-              )}）`,
+              sText: `${formattedLastDay} ${this.$t('日別値')}`,
               unit: this.unit,
             }
           }
