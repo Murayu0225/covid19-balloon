@@ -8,7 +8,6 @@
         :chart-data="graphData"
         :date="date"
         :unit="$t('人')"
-        :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000087'"
       >
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
@@ -19,6 +18,9 @@
                   '各保健所から報告があった患者の発生情報を、検査により陽性であることを医師が確認した日別（確定日別）に整理したものである'
                 )
               }}
+            </li>
+            <li>
+              {{ $t('非公開者（２名）はグラフから除いている') }}
             </li>
           </ul>
         </template>
