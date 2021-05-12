@@ -10,9 +10,9 @@ export const getLinksLanguageAlternative = (
   const getFullPathWihLocale = (locale: string) => {
     const pathLocale = locale === 'ja' ? '' : `/${locale}`
     if (routeBaseName === 'index') {
-      return `https://stopcovid19.metro.tokyo.lg.jp${pathLocale}`
+      return `https://sagamihara-stopcovid19.com${pathLocale}`
     } else {
-      return `https://stopcovid19.metro.tokyo.lg.jp${pathLocale}/${routeBaseName}`
+      return `https://sagamihara-stopcovid19.com${pathLocale}/${routeBaseName}`
     }
   }
 
