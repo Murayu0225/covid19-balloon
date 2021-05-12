@@ -29,13 +29,9 @@ PATHS = (
 LANGS = (
     'ja',
     'en',
-    'fr',
     'zh-cn',
     'zh-tw',
     'ko',
-    'th',
-    'vi',
-    'pt-BR',
 )
 
 options = webdriver.ChromeOptions()
