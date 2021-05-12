@@ -6,13 +6,13 @@
     <static-card>
       {{
         $t(
-          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものです。'
+          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものを相模原市向けに改変したものです。'
         )
       }}<br />
       <br />
       {{
         $t(
-          '東京都による公式情報と客観的な数値をわかりやすく伝えることで、東京都にお住まいの方や、東京都内に拠点を持つ企業の方、東京都を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
+          '相模原市による公式情報と客観的な数値をわかりやすく伝えることで、相模原市にお住まいの方や、相模原市内に拠点を持つ企業の方、相模原市を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
         )
       }}
     </static-card>
@@ -167,7 +167,7 @@
       <p>
         {{
           $t(
-            '当サイトに掲載されている情報の正確性については万全を期していますが、東京都は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
+            '当サイトに掲載されている情報の正確性については万全を期していますが、当サイト製作者は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
           )
         }}
       </p>
@@ -187,19 +187,6 @@
       </p>
     </static-card>
     <static-card>
-      <h3>{{ $t('データについて') }}</h3>
-      <i18n
-        tag="p"
-        path="本サイトで公表しているデータは、{catalogWebsite}より誰でも自由にダウンロードが可能です。（データは順次追加予定です）"
-      >
-        <template #catalogWebsite>
-          <app-link to="https://portal.data.metro.tokyo.lg.jp/" :icon-size="16">
-            {{ $t('東京都オープンデータカタログサイト') }}
-          </app-link>
-        </template>
-      </i18n>
-    </static-card>
-    <static-card>
       <h3>{{ $t('ソースコードについて') }}</h3>
       <p>
         {{
@@ -210,7 +197,7 @@
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <template #githubRepo>
             <app-link
-              to="https://github.com/tokyo-metropolitan-gov/covid19"
+              to="https://github.com/Murayu0225/covid19"
               :icon-size="16"
             >
               {{ $t('GitHub リポジトリ') }}
@@ -232,7 +219,6 @@
         <li>
           {{ $t('ただし商標等の他団体が権利を持つ以下のものは除きます。') }}
           <ul>
-            <li>{{ $t('Gマーク（グッドデザイン賞受賞マーク）') }}</li>
             <li>
               {{
                 $t(
@@ -243,6 +229,28 @@
           </ul>
         </li>
       </ul>
+    </static-card>
+    <static-card>
+      <h3>{{ $t('翻訳技術について') }}</h3>
+      <p>
+        {{
+          $t(
+            '当サイトは、Google社が提供するGoogle Translation API を利用して翻訳機能を提供しております。'
+          )
+        }}
+        <i18n
+          path="翻訳に関するご意見は、{questionmail}より受け付けております。"
+        >
+          <template #questionmail>
+            <app-link
+              to="https://docs.google.com/forms/d/1EE4AjnRQbCAd_iDD339WyQkR_KdJMChZyjHSPEI0haM/edit"
+              :icon-size="16"
+            >
+              {{ $t('こちら') }}
+            </app-link>
+          </template>
+        </i18n>
+      </p>
     </static-card>
   </div>
 </template>
