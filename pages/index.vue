@@ -38,7 +38,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   head(): MetaInfo {
     return {
-      title: this.$t('都内の最新感染動向') as string,
+      title: this.$t('市内の最新感染動向') as string,
     }
   },
 }
