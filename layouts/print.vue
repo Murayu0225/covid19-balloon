@@ -1,14 +1,14 @@
 <template>
   <v-app class="app-print">
     <div v-if="loading" class="loader">
-      <img src="/logo.svg" :alt="$t('東京都')" />
+      <img src="/logo.svg" :alt="$t('相模原市')" />
       <scale-loader color="#00A040" />
     </div>
     <div v-else class="print-container">
       <div class="PrintMeta">
         <div class="PrintMeta-HeadingWrapper">
           <div class="PrintMeta-Logo">
-            <img src="/logo.svg" :alt="$t('東京都')" />
+            <img src="/logo.svg" :alt="$t('相模原市')" />
           </div>
           <h1 class="PrintMeta-Heading">
             {{ $t('新型コロナウイルス感染症') }}
@@ -24,7 +24,7 @@
             <p class="PrintMeta-Text">
               {{ $t('※最新の情報はWebページをご覧ください') }}
             </p>
-            <p class="PrintMeta-Link">https://stopcovid19.metro.tokyo.lg.jp/</p>
+            <p class="PrintMeta-Link">https://sagamihara-stopcovid19.com/</p>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`,
+          href: `https://sagamihara-stopcovid19.com${this.$route.path}`,
         },
       ],
     }
