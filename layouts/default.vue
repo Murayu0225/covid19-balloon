@@ -2,8 +2,8 @@
   <v-app class="app">
     <v-overlay :value="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
-        <img src="/logo.svg" alt="東京都" />
-        <scale-loader color="#00A040" />
+        <img src="/logo.svg" alt="相模原市" />
+        <scale-loader color="#085c6c" />
       </div>
     </v-overlay>
     <div v-if="hasNavigation" class="appContainer">
@@ -118,18 +118,18 @@ export default class Default extends Vue implements NuxtConfig {
       link: [
         {
           rel: 'canonical',
-          href: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`,
+          href: `https://sagamihara-stopcovid19.com${this.$route.path}`,
         },
         ...(linksAlternate as []),
       ],
       // Disable prettier for readability purposes
       // eslint-disable-next-line prettier/prettier
-      titleTemplate: `%s | ${this.$t('東京都')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')}`,
+      titleTemplate: `%s | ${this.$t('相模原市')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')}`,
       meta: [
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('東京都'),
+          content: this.$tc('相模原市'),
         },
         {
           hid: 'description',
@@ -137,26 +137,26 @@ export default class Default extends Vue implements NuxtConfig {
           content: `${this.$t('{date} 更新', {
             date: convertDateToSimpleFormat(lastUpdate),
           })}: ${this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものです。'
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものを相模原市向けに改変したものです。'
           )}`,
         },
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content: `${this.$t('東京都')} ${this.$t(
+          content: `${this.$t('相模原市')} ${this.$t(
             '新型コロナウイルス感染症'
           )} ${this.$t('対策サイト')}`,
         },
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`,
+          content: `https://sagamihara-stopcovid19.com/${this.$route.path}`,
         },
         ogLocale,
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.$t('東京都')} ${this.$t(
+          content: `${this.$t('相模原市')} ${this.$t(
             '新型コロナウイルス感染症'
           )} ${this.$t('対策サイト')}`,
         },
@@ -166,7 +166,7 @@ export default class Default extends Vue implements NuxtConfig {
           content: `${this.$t('{date} 更新', {
             date: convertDateToSimpleFormat(lastUpdate),
           })}: ${this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものです。'
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、東京都が開設したものを相模原市向けに改変したものです。'
           )}`,
         },
         {
@@ -177,7 +177,7 @@ export default class Default extends Vue implements NuxtConfig {
         {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
-          content: `${this.$t('東京都')} ${this.$t(
+          content: `${this.$t('相模原市')} ${this.$t(
             '新型コロナウイルス感染症'
           )} ${this.$t('対策サイト')}`,
         },
