@@ -19,7 +19,7 @@
             <th class="text-center" scope="col">
               {{ $t('お問い合わせ内容') }}
             </th>
-            <th class="text-center" scope="col">{{ $t('局名') }}</th>
+            <th class="text-center" scope="col">{{ $t('担当名') }}</th>
             <th class="text-center tel" scope="col">{{ $t('電話番号') }}</th>
           </tr>
         </thead>
@@ -29,13 +29,15 @@
               {{ $t('新型コロナウイルス感染症の予防・検査・医療に関すること') }}
             </td>
             <td class="bureau importantContact">
-              {{ $t('新型コロナコールセンター') }}
+              {{ $t('相模原市 新型コロナウイルス感染症相談センター') }}
             </td>
             <td class="tel">
-              <a href="tel:0570-550571" class="importantContact">0570-550571</a
+              <a href="tel:042-769-9237" class="importantContact"
+                >042-769-9237</a
               ><br />
+              <br />
               <p class="caution">
-                {{ $t(`午前9時00分から午後10時00分（土日祝含む）`) }}
+                {{ $t(`24時間対応`) }}
               </p>
               <p class="caution">
                 {{
@@ -48,129 +50,111 @@
           </tr>
           <tr>
             <td class="content importantContact" v-bind="headingAttrs">
-              {{ $t('東京都緊急事態措置等・感染拡大防止協力金等に関すること') }}
+              {{ $t('新型コロナウイルスワクチン接種に関すること') }}
             </td>
             <td class="bureau importantContact">
-              {{ $t('東京都緊急事態措置等・感染拡大防止協力金相談センター') }}
+              {{ $t('相模原市 新型コロナウイルス接種コールセンター') }}
             </td>
             <td class="tel">
-              <a href="tel:03-5388-0567" class="importantContact"
-                >03-5388-0567</a
-              ><br />
-              <p class="caution">
-                {{ $t('午前9時00分から午後7時00分（土日祝含む）') }}
-              </p>
+              <ul>
+                <li>
+                  {{ $t('直通') }}<br /><a href="tel:042-767-2101"
+                    >042-767-2101</a
+                  >
+                </li>
+                <li>
+                  {{ $t('外国人専用ダイヤル（対応言語：英語、中国語、韓国語）')
+                  }}<br /><a href="tel:042-767-2104">042-767-2104</a>
+                </li>
+                <br />
+                <p class="caution">
+                  {{ $t(`どちらも、午前8時30分から午後7時まで`) }}
+                </p>
+                <p class="caution">
+                  {{ $t(`土・日、祝日も含む`) }}
+                </p>
+                <p class="caution">
+                  <i18n path="詳しくは、{pdf}をご参照ください。">
+                    <template v-slot:pdf>
+                      <app-link
+                        :to="
+                          $t(
+                            'https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/019/191/02/0226.pdf'
+                          )
+                        "
+                      >
+                        {{ $t('こちら(PDF 104.7KB)') }}
+                      </app-link>
+                    </template>
+                  </i18n>
+                </p>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="content importantContact" v-bind="headingAttrs">
+              {{ $t('かかりつけ医がない等受診に困った場合') }}
+            </td>
+            <td class="bureau importantContact">
+              {{ $t('神奈川県 発熱等診療予約センター') }}
+            </td>
+            <td class="tel">
+              <ul>
+                <li>
+                  {{ $t('通常時') }}<br /><a href="tel:0570-048914"
+                    >0570-048914</a
+                  >
+                </li>
+                <li>
+                  {{ $t('つながらない場合') }}<br /><a href="tel:042-285-1015"
+                    >042-286-1015</a
+                  >
+                </li>
+                <br />
+                <p class="caution">
+                  {{ $t(`どちらも、午前9時から午後9時まで`) }}
+                </p>
+                <p class="caution">
+                  {{ $t(`土・日、祝日も含む`) }}
+                </p>
+                <p class="caution">
+                  <i18n path="詳しくは、{kanagawa}をご参照ください。">
+                    <template v-slot:kanagawa>
+                      <app-link
+                        :to="
+                          $t(
+                            'https://www.pref.kanagawa.jp/docs/ga4/hatsunetsunado.html'
+                          )
+                        "
+                      >
+                        {{ $t('こちら') }}
+                      </app-link>
+                    </template>
+                  </i18n>
+                </p>
+              </ul>
             </td>
           </tr>
           <tr>
             <td class="content" v-bind="headingAttrs">
               {{ $t('本サイトの管理・運営に関すること') }}
             </td>
-            <td class="bureau">{{ $t('政策企画局') }}</td>
-            <td class="tel"><a href="tel:03-5388-2171">03-5388-2171</a></td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('新型コロナウイルス感染症対策本部会議に関すること')
-              }}<br />{{ $t('都庁来庁者データに関すること') }}
+            <td class="bureau">
+              {{ $t('本サイト製作者直通メールアドレス（個人）') }}
             </td>
-            <td class="bureau">{{ $t('総務局') }}</td>
             <td class="tel">
-              <ul>
-                <li>
-                  {{ $t('新型コロナウイルス感染症対策本部会議に関すること') }}
-                  <br />
-                  <a href="tel:03-5388-2453"> 03-5388-2453 </a>
-                </li>
-                <li>
-                  {{ $t('都庁来庁者データに関すること') }}
-                  <br />
-                  <a href="tel:03-5388-2319"> 03-5388-2319 </a>
-                </li>
-              </ul>
+              <a href="mailto:contact@sagamihara-stopcovid19.com"
+                >contact@sagamihara-stopcovid19.com</a
+              ><br />
+              <br />
+              <p class="caution">
+                {{
+                  $t(
+                    `お問い合わせの際は、氏名と共にお問い合わせ内容を記入していただきますようお願いいたします。`
+                  )
+                }}
+              </p>
             </td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('都公式ホームページに関すること') }}<br />{{
-                $t('都公式SNSアカウントに関すること')
-              }}
-            </td>
-            <td class="bureau">{{ $t('生活文化局') }}</td>
-            <td class="tel">
-              <ul>
-                <li>
-                  {{ $t('都公式ホームページに関すること') }}<br /><a
-                    href="tel:03-5388-3061"
-                    >03-5388-3061</a
-                  >
-                </li>
-                <li>
-                  {{ $t('都公式SNSアカウントに関すること') }}<br /><a
-                    href="tel:03-5388-3094"
-                    >03-5388-3094</a
-                  >
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('中小企業支援、テレワークに関すること') }}
-            </td>
-            <td class="bureau">{{ $t('産業労働局') }}</td>
-            <td class="tel">
-              <ul>
-                <li>
-                  {{ $t('資金繰りに関すること') }}<br /><a
-                    href="tel:03-5320-4877"
-                    >03-5320-4877</a
-                  >
-                </li>
-                <li>
-                  {{ $t('経営に関すること') }}<br /><a href="tel:03-3251-7881"
-                    >03-3251-7881</a
-                  >
-                </li>
-                <li>
-                  {{ $t('労働関係に関すること') }}<br /><a
-                    href="tel:0570-00-6110"
-                    >0570-00-6110</a
-                  >
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('都立学校に関すること') }}
-            </td>
-            <td class="bureau">{{ $t('教育庁') }}</td>
-            <td class="tel"><a href="tel:03-5320-6705">03-5320-6705</a></td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('スムーズビズに関すること') }}
-            </td>
-            <td class="bureau">{{ $t('都市整備局') }}</td>
-            <td class="tel"><a href="tel:03-5388-3317">03-5388-3317</a></td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('都営交通に関すること') }}
-            </td>
-            <td class="bureau">{{ $t('交通局') }}</td>
-            <td class="tel">
-              <a href="tel:03-3816-5700">03-3816-5700</a><br />
-              {{ $t('（都営交通お客様センター）') }}
-            </td>
-          </tr>
-          <tr>
-            <td class="content" v-bind="headingAttrs">
-              {{ $t('ご家庭でのマスク等の捨て方に関すること') }}
-            </td>
-            <td class="bureau">{{ $t('環境局') }}</td>
-            <td class="tel"><a href="tel:03-5388-3581">03-5388-3581</a></td>
           </tr>
         </tbody>
       </table>
