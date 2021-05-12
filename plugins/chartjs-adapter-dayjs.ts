@@ -1,10 +1,6 @@
 import 'dayjs/locale/en'
-import 'dayjs/locale/fr'
 import 'dayjs/locale/ja'
 import 'dayjs/locale/ko'
-import 'dayjs/locale/pt-br'
-import 'dayjs/locale/th'
-import 'dayjs/locale/vi'
 import 'dayjs/locale/zh-cn'
 import 'dayjs/locale/zh-tw'
 
