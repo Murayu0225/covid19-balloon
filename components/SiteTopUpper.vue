@@ -17,13 +17,17 @@
         <span>{{ $t('注釈') }}</span>
       </div>
     </div>
-    <whats-new :items="newsItems" :is-emergency="false" />
-    <infection-medicalcareprovision-status />
-    <monitoring-comment-card />
-    <div class="row mb-4">
-      <staying-population />
-      <consultation />
-    </div>
+    <whats-new class="mb-4" :items="newsItems" :is-emergency="true" />
+    <detail-a />
+    <detail-data />
+    <VaccineInfoCard />
+    <lazy-static-info
+      v-if="$vuetify.breakpoint.smAndUp || showStaticInfo"
+      class="mb-4"
+      :url="'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html'"
+      :text="$t('自分や家族の症状に不安や心配があれば、まずは電話相談をどうぞ')"
+      :btn-text="$t('相談の手順を見る')"
+    />
   </div>
 </template>
 
@@ -31,10 +35,10 @@
 import { mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 
-import Consultation from '@/components/Consultation.vue'
-import MonitoringCommentCard from '@/components/MonitoringCommentCard.vue'
+import DetailA from '@/components/DetailA.vue'
+import DetailData from '@/components/DetailData.vue'
 import PageHeader from '@/components/PageHeader.vue'
-import StayingPopulation from '@/components/StayingPopulation.vue'
+import VaccineInfoCard from '@/components/VaccineInfoCard.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import { Data as IData } from '@/libraries/auto_generated/data_converter/convertData'
 import {
@@ -66,15 +70,15 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
     PageHeader,
     WhatsNew,
-    MonitoringCommentCard,
-    Consultation,
-    StayingPopulation,
+    VaccineInfoCard,
+    DetailData,
+    DetailA,
   },
   data() {
     return {
       headerItem: {
         iconPath: mdiChartTimelineVariant,
-        title: this.$t('都内の最新感染動向') as string,
+        title: this.$t('市内の最新感染動向') as string,
       },
     }
   },
