@@ -1,4 +1,5 @@
 import 'dayjs/locale/en'
+import 'dayjs/locale/fr'
 import 'dayjs/locale/ja'
 import 'dayjs/locale/ko'
 import 'dayjs/locale/pt-br'
