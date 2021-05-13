@@ -8,8 +8,8 @@
 // match the expected interface, even if the JSON is valid.
 
 export interface PositiveByDiagnosed {
-    date: string;
     data: Datum[];
+    date: string;
 }
 
 export interface Datum {
@@ -163,8 +163,8 @@ function r(name: string) {
 
 const typeMap: any = {
     "PositiveByDiagnosed": o([
-        { json: "date", js: "date", typ: "" },
         { json: "data", js: "data", typ: a(r("Datum")) },
+        { json: "date", js: "date", typ: "" },
     ], false),
     "Datum": o([
         { json: "diagnosed_date", js: "diagnosedDate", typ: Date },

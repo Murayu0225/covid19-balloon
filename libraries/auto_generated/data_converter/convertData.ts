@@ -8,44 +8,25 @@
 // match the expected interface, even if the JSON is valid.
 
 export interface Data {
-    contacts:           Contacts;
-    querents:           Querents;
-    patientsSummary:    PatientsSummary;
-    inspectionsSummary: InspectionsSummary;
-    lastUpdate:         string;
-    mainSummary:        MainSummary;
+    patientsSummary: PatientsSummary;
+    data:            { [key: string]: number };
+    lastUpdate:      string;
+    mainSummary:     MainSummary;
+    date:            string;
+    datasets:        Datasets;
 }
 
-export interface Contacts {
+export interface Datasets {
     date: string;
-    data: ContactsDatum[];
+    data: DatasetsDatum[];
 }
 
-export interface ContactsDatum {
-    日付:       Date;
-    曜日:       曜日;
-    the913時:  number;
-    the1317時: number;
-    the1721時: number;
-    date:     Date;
-    w:        number;
-    小計:       number;
-}
-
-export enum 曜日 {
-    土 = "土",
-    日 = "日",
-    月 = "月",
-    木 = "木",
-    水 = "水",
-    火 = "火",
-    金 = "金",
-}
-
-export interface InspectionsSummary {
-    date:   string;
-    data:   { [key: string]: number[] };
-    labels: Date[];
+export interface DatasetsDatum {
+    code:  number | null;
+    area:  null | string;
+    label: string;
+    ruby:  null | string;
+    count: number;
 }
 
 export interface MainSummary {
@@ -71,29 +52,13 @@ export interface FluffyChild {
 }
 
 export interface PatientsSummary {
-    date: string;
     data: PatientsSummaryDatum[];
+    date: string;
 }
 
 export interface PatientsSummaryDatum {
     日付: Date;
     小計: number;
-}
-
-export interface Querents {
-    date: string;
-    data: QuerentsDatum[];
-}
-
-export interface QuerentsDatum {
-    日付:       Date;
-    曜日:       曜日;
-    the917時:  number;
-    the17翌9時: number;
-    the７日間平均: number | null;
-    date:     Date;
-    w:        number;
-    小計:       number;
 }
 
 // Converts JSON strings to/from your types
@@ -242,31 +207,23 @@ function r(name: string) {
 
 const typeMap: any = {
     "Data": o([
-        { json: "contacts", js: "contacts", typ: r("Contacts") },
-        { json: "querents", js: "querents", typ: r("Querents") },
         { json: "patients_summary", js: "patientsSummary", typ: r("PatientsSummary") },
-        { json: "inspections_summary", js: "inspectionsSummary", typ: r("InspectionsSummary") },
+        { json: "data", js: "data", typ: m(0) },
         { json: "lastUpdate", js: "lastUpdate", typ: "" },
         { json: "main_summary", js: "mainSummary", typ: r("MainSummary") },
-    ], false),
-    "Contacts": o([
         { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: a(r("ContactsDatum")) },
+        { json: "datasets", js: "datasets", typ: r("Datasets") },
     ], false),
-    "ContactsDatum": o([
-        { json: "日付", js: "日付", typ: Date },
-        { json: "曜日", js: "曜日", typ: r("曜日") },
-        { json: "9-13時", js: "the913時", typ: 0 },
-        { json: "13-17時", js: "the1317時", typ: 0 },
-        { json: "17-21時", js: "the1721時", typ: 0 },
-        { json: "date", js: "date", typ: Date },
-        { json: "w", js: "w", typ: 0 },
-        { json: "小計", js: "小計", typ: 0 },
-    ], false),
-    "InspectionsSummary": o([
+    "Datasets": o([
         { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: m(a(0)) },
-        { json: "labels", js: "labels", typ: a(Date) },
+        { json: "data", js: "data", typ: a(r("DatasetsDatum")) },
+    ], false),
+    "DatasetsDatum": o([
+        { json: "code", js: "code", typ: u(0, null) },
+        { json: "area", js: "area", typ: u(null, "") },
+        { json: "label", js: "label", typ: "" },
+        { json: "ruby", js: "ruby", typ: u(null, "") },
+        { json: "count", js: "count", typ: 0 },
     ], false),
     "MainSummary": o([
         { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
@@ -287,34 +244,11 @@ const typeMap: any = {
         { json: "value", js: "value", typ: 0 },
     ], false),
     "PatientsSummary": o([
-        { json: "date", js: "date", typ: "" },
         { json: "data", js: "data", typ: a(r("PatientsSummaryDatum")) },
+        { json: "date", js: "date", typ: "" },
     ], false),
     "PatientsSummaryDatum": o([
         { json: "日付", js: "日付", typ: Date },
         { json: "小計", js: "小計", typ: 0 },
     ], false),
-    "Querents": o([
-        { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: a(r("QuerentsDatum")) },
-    ], false),
-    "QuerentsDatum": o([
-        { json: "日付", js: "日付", typ: Date },
-        { json: "曜日", js: "曜日", typ: r("曜日") },
-        { json: "9-17時", js: "the917時", typ: 0 },
-        { json: "17-翌9時", js: "the17翌9時", typ: 0 },
-        { json: "７日間平均", js: "the７日間平均", typ: u(0, null) },
-        { json: "date", js: "date", typ: Date },
-        { json: "w", js: "w", typ: 0 },
-        { json: "小計", js: "小計", typ: 0 },
-    ], false),
-    "曜日": [
-        "土",
-        "日",
-        "月",
-        "木",
-        "水",
-        "火",
-        "金",
-    ],
 };

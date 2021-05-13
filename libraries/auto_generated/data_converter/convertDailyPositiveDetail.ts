@@ -8,20 +8,20 @@
 // match the expected interface, even if the JSON is valid.
 
 export interface DailyPositiveDetail {
-    date: string;
     data: Datum[];
+    date: string;
 }
 
 export interface Datum {
-    diagnosedDate:                        Date;
-    count:                                number;
-    missingCount:                         number | null;
-    reportedCount:                        number | null;
-    weeklyGainRatio:                      number | null;
-    untrackedPercent:                     number | null;
-    weeklyAverageCount:                   number | null;
-    weeklyAverageUntrackedCount:          number | null;
-    weeklyAverageUntrackedIncresePercent: number | null;
+    diagnosedDate:                         Date;
+    count:                                 number;
+    missingCount?:                         number | null;
+    reportedCount?:                        number | null;
+    weeklyGainRatio?:                      number | null;
+    untrackedPercent?:                     number | null;
+    weeklyAverageCount:                    number;
+    weeklyAverageUntrackedCount?:          number | null;
+    weeklyAverageUntrackedIncresePercent?: number | null;
 }
 
 // Converts JSON strings to/from your types
@@ -170,18 +170,18 @@ function r(name: string) {
 
 const typeMap: any = {
     "DailyPositiveDetail": o([
-        { json: "date", js: "date", typ: "" },
         { json: "data", js: "data", typ: a(r("Datum")) },
+        { json: "date", js: "date", typ: "" },
     ], false),
     "Datum": o([
         { json: "diagnosed_date", js: "diagnosedDate", typ: Date },
         { json: "count", js: "count", typ: 0 },
-        { json: "missing_count", js: "missingCount", typ: u(0, null) },
-        { json: "reported_count", js: "reportedCount", typ: u(0, null) },
-        { json: "weekly_gain_ratio", js: "weeklyGainRatio", typ: u(3.14, null) },
-        { json: "untracked_percent", js: "untrackedPercent", typ: u(3.14, null) },
-        { json: "weekly_average_count", js: "weeklyAverageCount", typ: u(3.14, null) },
-        { json: "weekly_average_untracked_count", js: "weeklyAverageUntrackedCount", typ: u(3.14, null) },
-        { json: "weekly_average_untracked_increse_percent", js: "weeklyAverageUntrackedIncresePercent", typ: u(3.14, null) },
+        { json: "missing_count", js: "missingCount", typ: u(undefined, u(0, null)) },
+        { json: "reported_count", js: "reportedCount", typ: u(undefined, u(0, null)) },
+        { json: "weekly_gain_ratio", js: "weeklyGainRatio", typ: u(undefined, u(3.14, null)) },
+        { json: "untracked_percent", js: "untrackedPercent", typ: u(undefined, u(3.14, null)) },
+        { json: "weekly_average_count", js: "weeklyAverageCount", typ: 3.14 },
+        { json: "weekly_average_untracked_count", js: "weeklyAverageUntrackedCount", typ: u(undefined, u(3.14, null)) },
+        { json: "weekly_average_untracked_increse_percent", js: "weeklyAverageUntrackedIncresePercent", typ: u(undefined, u(3.14, null)) },
     ], false),
 };

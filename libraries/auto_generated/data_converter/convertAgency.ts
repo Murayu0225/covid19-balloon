@@ -1,28 +1,37 @@
 // To parse this data:
 //
-//   import { Convert, InfectionMedicalcareprovisionStatus } from "./file";
+//   import { Convert, Agency } from "./file";
 //
-//   const infectionMedicalcareprovisionStatus = Convert.toInfectionMedicalcareprovisionStatus(json);
+//   const agency = Convert.toAgency(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface InfectionMedicalcareprovisionStatus {
-    date:        string;
-    pcrdate:     string;
-    vaccinedate: string;
-    data:        { [key: string]: number };
+export interface Agency {
+    date:     string;
+    periods:  Period[];
+    datasets: Dataset[];
+}
+
+export interface Dataset {
+    label: string;
+    data:  number[];
+}
+
+export interface Period {
+    begin: Date;
+    end:   Date;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toInfectionMedicalcareprovisionStatus(json: string): InfectionMedicalcareprovisionStatus {
-        return cast(JSON.parse(json), r("InfectionMedicalcareprovisionStatus"));
+    public static toAgency(json: string): Agency {
+        return cast(JSON.parse(json), r("Agency"));
     }
 
-    public static infectionMedicalcareprovisionStatusToJson(value: InfectionMedicalcareprovisionStatus): string {
-        return JSON.stringify(uncast(value, r("InfectionMedicalcareprovisionStatus")), null, 2);
+    public static agencyToJson(value: Agency): string {
+        return JSON.stringify(uncast(value, r("Agency")), null, 2);
     }
 }
 
@@ -159,10 +168,17 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "InfectionMedicalcareprovisionStatus": o([
+    "Agency": o([
         { json: "date", js: "date", typ: "" },
-        { json: "pcrdate", js: "pcrdate", typ: "" },
-        { json: "vaccinedate", js: "vaccinedate", typ: "" },
-        { json: "data", js: "data", typ: m(0) },
+        { json: "periods", js: "periods", typ: a(r("Period")) },
+        { json: "datasets", js: "datasets", typ: a(r("Dataset")) },
+    ], false),
+    "Dataset": o([
+        { json: "label", js: "label", typ: "" },
+        { json: "data", js: "data", typ: a(0) },
+    ], false),
+    "Period": o([
+        { json: "begin", js: "begin", typ: Date },
+        { json: "end", js: "end", typ: Date },
     ], false),
 };
