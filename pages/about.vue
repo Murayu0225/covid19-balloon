@@ -274,5 +274,10 @@ export default Vue.extend({
       title: this.$t('当サイトについて') as string,
     }
   },
+  methods: {
+    formatDate(date) {
+      return `${this.$d(date, 'date')}`
+    },
+  },
 })
 </script>
