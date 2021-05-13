@@ -1,24 +1,27 @@
 {
     "newsItems": [
         {
-            "date": "2021\/05\/11",
-            "url": "https:\/\/www.bousai.metro.tokyo.lg.jp\/1007617\/index.html",
-            "text": "東京都緊急事態措置等に関する情報"
+            "date": "2021\/05\/12",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0512_02.pdf",
+            "text": "市設置施設の利用情報について"
         },
+
         {
-            "date": "2021\/05\/11",
-            "url": "https:\/\/www.fukushihoken.metro.tokyo.lg.jp\/iryo\/kansen\/zyuusyoubyousyou.html",
-            "text": "新型コロナウイルス感染症の重症者・病床について"
+            "date": "2021\/05\/10",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019215.html",
+            "text": "市設置施設の利用情報について"
         },
+
         {
-            "date": "2021\/05\/11",
-            "url": "https:\/\/www.fukushihoken.metro.tokyo.lg.jp\/iryo\/kansen\/ekigakuchousa.html",
-            "text": "都における新型コロナウイルス感染症の積極的疫学調査の対応について"
+            "date": "2021\/05\/07",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0507_02.pdf",
+            "text": "新型コロナウイルス感染症に係るまん延防止等重点措置の延長に対する市長コメント （PDF 335.8KB）"
         },
+
         {
-            "date": "2021\/05\/11",
-            "url": "https:\/\/www.seisakukikaku.metro.tokyo.lg.jp\/cross-efforts\/corona\/stay-home.html#stayhome",
-            "text": "コロナをおさえるSTAYHOMEポータルサイトを開設しました"
-        }
+            "date": "2021\/04\/26",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019896.html",
+            "text": "新型コロナウイルス感染症に関する各種相談窓口"
+        },
     ]
 }
