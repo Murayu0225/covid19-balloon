@@ -159,7 +159,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       margin: 0;
 
       > span {
-        color: #008830;
+        color: #053c47;
       }
 
       > a {
