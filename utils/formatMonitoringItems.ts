@@ -58,17 +58,7 @@ export type MonitoringItems = Record<DataKey, MonitoringItemValue>
  */
 export const formatMonitoringItems = (rawDataObj: RawData): MonitoringItems => {
   const unitPerson: Unit = { text: '人', translatable: true }
-  const unitReports: Unit = {
-    text: '件.reports',
-    translatable: true,
-  }
   const unitPercentage: Unit = { text: '%', translatable: false }
-  const unitBed: Unit = {
-    text: '床',
-    translatable: true,
-    // 英語では対応する単位を表示しない
-    except: ['en'],
-  }
 
   const unitSpace: Unit = { text: ' ', translatable: false }
 
