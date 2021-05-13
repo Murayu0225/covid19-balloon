@@ -197,7 +197,7 @@
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <template #githubRepo>
             <app-link
-              to="https://github.com/Murayu0225/covid19"
+              to="https://github.com/Murayu0225/covid19-chocolate"
               :icon-size="16"
             >
               {{ $t('GitHub リポジトリ') }}
