@@ -75,7 +75,7 @@
                 </p>
                 <p class="caution">
                   <i18n path="詳しくは、{pdf}をご参照ください。">
-                    <template v-slot:pdf>
+                    <template #pdf>
                       <app-link
                         :to="
                           $t(
@@ -119,7 +119,7 @@
                 </p>
                 <p class="caution">
                   <i18n path="詳しくは、{kanagawa}をご参照ください。">
-                    <template v-slot:kanagawa>
+                    <template #kanagawa>
                       <app-link
                         :to="
                           $t(
