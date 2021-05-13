@@ -19,13 +19,11 @@
       </div>
       <div class="InfectionMedicalcareprovisionStatus-description">
         {{ $t('1日当たりの検査人数')
-        }}<span
-          >{{ statuses['1日当たりの検査人数'].toLocaleString() }}人</span
+        }}<span>{{ statuses['1日当たりの検査人数'].toLocaleString() }}人</span
         >、{{ $t('累計検査人数')
         }}<span>{{ statuses['累計検査人数'].toLocaleString() }}人</span>、
         {{ $t('1日当たりの検査件数')
-        }}<span
-          >{{ statuses['1日当たりの検査件数'].toLocaleString() }}件</span
+        }}<span>{{ statuses['1日当たりの検査件数'].toLocaleString() }}件</span
         >、{{ $t('累計検査件数')
         }}<span>{{ statuses['累計検査件数'].toLocaleString() }}件</span>
         {{ $t('（PCR検査更新日時') }}
@@ -41,13 +39,10 @@
         </app-link>
       </div>
       <div class="InfectionMedicalcareprovisionStatus-description">
-        {{ $t('男性')
-        }}<span>{{ statuses['男性'].toLocaleString() }}人</span>、
-        {{ $t('女性')
-        }}<span>{{ statuses['女性'].toLocaleString() }}人</span>、
+        {{ $t('男性') }}<span>{{ statuses['男性'].toLocaleString() }}人</span>、
+        {{ $t('女性') }}<span>{{ statuses['女性'].toLocaleString() }}人</span>、
         {{ $t('累計陽性者数')
-        }}<span>{{ statuses['累計陽性者数'].toLocaleString() }}人</span
-        ><br />
+        }}<span>{{ statuses['累計陽性者数'].toLocaleString() }}人</span><br />
         {{ $t('10歳未満：')
         }}<span>{{ statuses['10歳未満'].toLocaleString() }}人</span>、
         {{ $t('10代：')
