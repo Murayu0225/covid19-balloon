@@ -3,7 +3,7 @@
     <div class="InfectionMedicalcareprovisionStatus-heading">
       <h3 class="InfectionMedicalcareprovisionStatus-title">
         {{ $t('検査数・陽性者の詳細') }}
-        {{ date }}時点
+        {{ formatDate(date) }}時点
       </h3>
       <!--<h4 class="InfectionMedicalcareprovisionStatus-title">
         {{ $t('このデータは、平日のみ更新') }}
@@ -76,22 +76,44 @@
 </template>
 
 <script lang="ts">
-import dayjs from 'dayjs'
 import Vue from 'vue'
 
-import InfectionMedicalcareprovisionStatus from '@/data/infection_medicalcareprovision_status.json'
+import {
+  Data as IInfectionMedicalCareProvisionStatusData,
+  InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus,
+} from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
-export default Vue.extend({
-  data() {
-    return {
-      statuses: InfectionMedicalcareprovisionStatus,
-      date: dayjs(InfectionMedicalcareprovisionStatus.date).format(
-        'YYYY年MM月DD日'
-      ),
-      pcrdate: dayjs(InfectionMedicalcareprovisionStatus.pcrdate).format(
-        'YYYY年MM月DD日'
-      ),
-    }
+type Data = {}
+type Methods = {
+  formatDate(date: Date): string
+}
+type Computed = {
+  statuses: IInfectionMedicalCareProvisionStatusData
+  date: Date
+  statisticDate: Date
+  infectionMedicalCareProvisionStatus: IInfectionMedicalCareProvisionStatus
+}
+type Props = {}
+
+export default Vue.extend<Data, Methods, Computed, Props>({
+  computed: {
+    statuses() {
+      return this.infectionMedicalCareProvisionStatus.data
+    },
+    date() {
+      return new Date(this.infectionMedicalCareProvisionStatus.date)
+    },
+    statisticDate() {
+      return this.infectionMedicalCareProvisionStatus.data['検査統計日時']
+    },
+    infectionMedicalCareProvisionStatus() {
+      return this.$store.state.infectionMedicalCareProvisionStatus
+    },
+  },
+  methods: {
+    formatDate(date) {
+      return this.$d(date, 'date') as string
+    },
   },
 })
 </script>
@@ -142,7 +164,7 @@ export default Vue.extend({
       margin: 0;
 
       > span {
-        color: #053c47;
+        color: #008830;
       }
 
       > a {
