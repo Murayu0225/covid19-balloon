@@ -1,13 +1,15 @@
 <template>
   <span class="link-to-information-about-emergency-measure">
-    <app-link to="https://www.bousai.metro.tokyo.lg.jp/1007617/index.html">
+    <app-link
+      to="https://www.city.sagamihara.kanagawa.jp/shisei/seisaku/1023033.html"
+    >
       <v-icon
         size="2rem"
         class="link-to-information-about-emergency-measure-icon"
       >
         {{ mdiBullhorn }}
       </v-icon>
-      {{ $t('東京都緊急事態措置について') }}
+      {{ $t('まん延防止等重点措置 発令中') }}
     </app-link>
   </span>
 </template>
