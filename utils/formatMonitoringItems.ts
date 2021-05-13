@@ -16,8 +16,6 @@ type DataKey =
   | '人口10万人当たりの療養者数'
   | '人口10万人当たりの療養者数（参考値）'
 
-type DataCommentKey = '総括コメント-感染状況' | '総括コメント-医療提供体制'
-
 // 小数の桁が自動的に四捨五入されるのを防ぐためにString値にしている
 
 type RawData = {
@@ -35,19 +33,6 @@ type RawData = {
   '重症者用病床の逼迫具合（参考値）': string
   人口10万人当たりの療養者数: string
   '人口10万人当たりの療養者数（参考値）': string
-}
-
-interface Comment {
-  level: number
-  display: {
-    '@ja': string
-    '@en': string
-  }
-}
-
-type RawDataComment = {
-  '総括コメント-感染状況': Comment
-  '総括コメント-医療提供体制': Comment
 }
 
 // -----------------------------------------
