@@ -126,6 +126,7 @@ import {
   mdiClose,
   mdiDomain,
   mdiMenu,
+  mdiNeedle,
 } from '@mdi/js'
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
