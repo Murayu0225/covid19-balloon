@@ -75,7 +75,7 @@
             </picture>
           </app-link>
           <app-link
-            to="https://github.com/Murayu0225/covid19"
+            to="https://github.com/Murayu0225/covid19-chocolate"
             :show-icon="false"
             class="SideNavigation-SocialLink"
           >
