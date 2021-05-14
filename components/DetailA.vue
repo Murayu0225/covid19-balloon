@@ -58,12 +58,21 @@ import Vue from 'vue'
 
 import Data from '@/data/data.json'
 
-export default Vue.extend({
+type Methods = {
+  formatDate(date: Date): string
+}
+
+export default Vue.extend<Methods>({
   data() {
     return {
       statuses: Data,
-      date: dayjs(Data.lastUpdate).format('YYYY年MM月DD日'),
+      date: Data.lastUpdate,
     }
+  },
+  methods: {
+    formatDate(date) {
+      return this.$d(date, 'date') as string
+    },
   },
 })
 </script>
