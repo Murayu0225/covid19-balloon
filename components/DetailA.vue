@@ -53,7 +53,6 @@
 </template>
 
 <script lang="ts">
-import dayjs from 'dayjs'
 import Vue from 'vue'
 
 import Data from '@/data/data.json'
