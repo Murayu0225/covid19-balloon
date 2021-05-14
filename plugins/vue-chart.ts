@@ -68,6 +68,7 @@ const createCustomChart = () => {
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
     'LineChart',
+     // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Line, generalChart],
     }
@@ -75,6 +76,7 @@ const createCustomChart = () => {
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
     'Bar',
+     // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Bar, generalChart],
     }
@@ -82,6 +84,7 @@ const createCustomChart = () => {
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
     'DoughnutChart',
+     // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Doughnut, generalChart],
     }
