@@ -3,7 +3,7 @@
     <div class="InfectionMedicalcareprovisionStatus-heading">
       <h3 class="InfectionMedicalcareprovisionStatus-title">
         {{ $t('本日の感染状況') }}
-        {{ formatDate(date) }}時点
+        {{ date }}時点
       </h3>
     </div>
     <div class="InfectionMedicalcareprovisionStatus-Box">
@@ -53,19 +53,16 @@
 </template>
 
 <script lang="ts">
+import dayjs from 'dayjs'
 import Vue from 'vue'
 
 import Data from '@/data/data.json'
 
-type Methods = {
-  formatDate(date: Date): string
-}
-
-export default Vue.extend<Methods>({
+export default Vue.extend({
   data() {
     return {
       statuses: Data,
-      date: Data.lastUpdate,
+      date: dayjs(Data.lastUpdate).format('YYYY年MM月DD日'),
     }
   },
   methods: {
