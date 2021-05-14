@@ -42,51 +42,49 @@ const createCustomChart = () => {
     ChartVCMethod,
     ChartVCComputed,
     ChartVCProps
-  >('GeneralChart',
-    // eslint-disable-next-line vue/one-component-per-file
+  >(
+    'GeneralChart', // eslint-disable-next-line vue/one-component-per-file
     {
-    mixins: [reactiveProp],
-    props: {
-      displayLegends: {
-        type: Array,
-        default: () => null,
+      mixins: [reactiveProp],
+      props: {
+        displayLegends: {
+          type: Array,
+          default: () => null,
+        },
+        options: {
+          type: Object as PropType<ChartOptions>,
+          default: () => {},
+        },
       },
-      options: {
-        type: Object as PropType<ChartOptions>,
-        default: () => {},
+      watch: {
+        displayLegends: watchDisplayLegends,
+        width() {
+          setTimeout(() => this.$data._chart.resize())
+          this.$parent.$emit('update-width')
+        },
       },
-    },
-    watch: {
-      displayLegends: watchDisplayLegends,
-      width() {
-        setTimeout(() => this.$data._chart.resize())
-        this.$parent.$emit('update-width')
+      mounted() {
+        setTimeout(() => this.renderChart(this.chartData, this.options))
       },
-    },
-    mounted() {
-      setTimeout(() => this.renderChart(this.chartData, this.options))
-    },
-  })
+    }
+  )
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
-    'LineChart',
-     // eslint-disable-next-line vue/one-component-per-file
+    'LineChart', // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Line, generalChart],
     }
   )
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
-    'Bar',
-     // eslint-disable-next-line vue/one-component-per-file
+    'Bar', // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Bar, generalChart],
     }
   )
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
-    'DoughnutChart',
-     // eslint-disable-next-line vue/one-component-per-file
+    'DoughnutChart', // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Doughnut, generalChart],
     }
