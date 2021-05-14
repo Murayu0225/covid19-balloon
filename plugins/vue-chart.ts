@@ -43,6 +43,7 @@ const createCustomChart = () => {
     ChartVCComputed,
     ChartVCProps
   >('GeneralChart', {
+     // eslint-disable-next-line vue/one-component-per-file
     mixins: [reactiveProp],
     props: {
       displayLegends: {
