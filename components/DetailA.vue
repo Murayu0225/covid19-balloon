@@ -2,8 +2,9 @@
   <div class="InfectionMedicalcareprovisionStatus">
     <div class="InfectionMedicalcareprovisionStatus-heading">
       <h3 class="InfectionMedicalcareprovisionStatus-title">
-        {{ $t('本日の感染状況') }}
-        {{ date }}時点
+        {{ $t('本日の感染状況（{data}時点）', {
+            data: Data.lastUpdate,
+          }}}
       </h3>
     </div>
     <div class="InfectionMedicalcareprovisionStatus-Box">
